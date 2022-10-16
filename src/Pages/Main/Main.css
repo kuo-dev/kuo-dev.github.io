@@ -1,0 +1,18 @@
+.main-page{
+    display: block
+}
+
+.main-container{
+    width: 100%;
+    min-height: 100vh;
+  
+    display: flex;
+    flex:column;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}

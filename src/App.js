@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import HamburgerMenu from "./components/HamburgerMenu";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import Main from "./Pages/Main/Main";
+import Blog from "./Pages/Blog/Blog";
+import ErrPage from "./Pages/ErrPage"
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Router>
+        <HamburgerMenu />
+        
+        <div className="pages">
+          <Routes>
+            <Route path="/" element={<Main/>} />
+            <Route path="/blog" element={<Blog/>} />
+            <Route path="*" element={<ErrPage/>}/>
+          </Routes>
+        </div>
+      </Router>
     </div>
   );
 }
